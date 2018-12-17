@@ -42,9 +42,10 @@ public class CounterController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/increment")
-    public int incrementCounter(HttpServletResponse response) throws IOException {
+    public void incrementCounter(HttpServletResponse response) throws IOException {
 
-        return counterService.incrementCounter();
+        counterService.incrementCounter();
+        response.sendRedirect("/");
 
     }
 
